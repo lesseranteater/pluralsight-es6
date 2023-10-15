@@ -47,9 +47,10 @@ describe("how var/let work", () => {
     var doWork = function (flag) {
       var count = 30;
       // let count = 40; // Error: Block scoped variables cannot share name with 'var' variables or parameters in the same block scope
+      return count;
     };
-    doWork();
-    expect(result).toBe(3);
+    var result = doWork(true);
+    expect(result).toBe(30);
   });
 
   it("declaring a variable twice with var and let in different scope", () => {
@@ -135,7 +136,7 @@ describe("how var/let work", () => {
       object = {
         a: true,
         b: true,
-        c: true,
+        c: true
       };
     for (let key in object) {
       // we can also use 'const' instead of 'let' here
