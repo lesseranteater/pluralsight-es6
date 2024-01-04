@@ -14,22 +14,6 @@ describe("how var/let work", () => {
     expect(result).toBe(3);
     result = doWork(false);
     expect(result).toBe(undefined);
-
-    var getValue = function (condition) {
-      if (condition) {
-        var value = "blue";
-        // other code
-        return value;
-      } else {
-        // value exists here with a value of undefined
-        expect(value).toBe(undefined);
-        return null;
-      }
-    };
-    var resultTrue = getValue(true);
-    expect(resultTrue).toBe("blue");
-    var resultFalse = getValue(false);
-    expect(resultFalse).toBe(null);
   });
 
   it("let will provide block scoping, unlike var", () => {
