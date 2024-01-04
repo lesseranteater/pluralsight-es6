@@ -71,7 +71,7 @@ describe("how var/let work", () => {
     var funcs = [];
     for (var i = 0; i < 10; i++) {
       funcs.push(function () {
-        return i; // i is shared across each iteration of hte loop, meaning the functions created inside the loop
+        return i; // i is shared across each iteration of the loop, meaning the functions created inside the loop
         // all hold a reference to the same variable. The variable i has a value of 10 when the loop completes.
       });
     }
